@@ -1,0 +1,26 @@
+//first import react
+//import React from 'react'
+import React, {Component} from 'react'
+
+//fuctional component
+/*
+function Greet(){
+    return <h1> Xup yall. Functonal
+        component here
+    </h1>
+}*/
+
+//or using arrow function
+export const Greett = ()=>
+    <h1>Xup using arrow functions</h1>
+
+//class component
+
+class Welcome extends Component{
+    render(){
+        return<h1>Class Component</h1>
+    }
+}
+
+//then export the function
+export default Welcome
