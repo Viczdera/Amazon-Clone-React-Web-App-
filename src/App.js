@@ -1,19 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-//import Greet.js
-import Greet from './components/Greets'
-import Welcome from './components/Greets'
-import Hello from './components/jsxx'
+import "./App.css";
+import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div>
+      {/*Header*/}
+      <Header />
+      {/*Body*/}
+      <Home />
     </div>
   );
 }
 
 export default App;
-
-
-

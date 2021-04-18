@@ -1,0 +1,62 @@
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100; /*always above all components*/
+  background-color: #131921;
+}
+.headerLogo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain; /*keeps aspect ratio */
+  margin: 0 20px;
+  margin-top: 10px;
+}
+.hOLineone,
+.hOLinetwo {
+  color: #fff;
+}
+.headerSearch {
+  display: flex;
+  flex: 1; /*stretching the search box*/
+}
+.headerSearchinput {
+  width: 100%;
+}
+.headerSearchIcon {
+  color: #fff;
+  height: 20px;
+  background-color: rgb(226, 79, 79);
+}
+
+.headerNav {
+  display: flex;
+}
+.headerOption {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex-direction: column;
+}
+.hOLineone {
+  font-size: 10px;
+}
+.hOLinetwo {
+  font-size: 13px;
+  font-weight: 800;
+}
+.headerOptionbasket {
+  display: flex;
+  align-items: center;
+  background-color: rgb(226, 79, 79);
+  color: #fff;
+  margin-right: 10px;
+  padding: 4px;
+}
+.headerShoppingbasket {
+  color: #fff;
+  height: 30px;
+  align-items: center;
+}
