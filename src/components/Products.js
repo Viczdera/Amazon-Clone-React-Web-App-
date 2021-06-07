@@ -1,8 +1,27 @@
 import React from "react";
 import "./Products.css";
 import { Star } from "@material-ui/icons";
-function Products({ title, price, image, rating }) {
-  return (
+import { useStateValue } from "../stateprovider";
+function Products({ id, title, price, image, rating }) {
+  const [{cart}, dispatch] = useStateValue();
+
+  {/*console.log("a cart", cart);*/}
+
+  const addToCart = () => {
+    //dispatch the item into the data layer
+    dispatch({
+      type: "ADD_TO_CART",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
+
+  return ( 
     <div className="product">
       <div className="productInfo">
         <p>{title}</p>
@@ -19,7 +38,7 @@ function Products({ title, price, image, rating }) {
         </div>
       </div>
       <img src={image} />
-      <button>Add to Cart</button>
+      <button onClick={addToCart}>Add to Cart</button>
     </div>
   );
 }

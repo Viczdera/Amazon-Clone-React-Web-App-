@@ -1,0 +1,18 @@
+.checkoutContainer {
+  display: flex;
+}
+.checkoutTitle {
+  display: flex;
+  margin: 3px;
+  width: 100%;
+  background-color: white;
+  justify-content: center;
+}
+.checkoutLeft {
+  width: 70%;
+  background-color: rgb(244, 247, 247);
+}
+.checkoutRight {
+  width: 30%;
+  height: 40%;
+}

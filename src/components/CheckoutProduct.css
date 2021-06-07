@@ -1,0 +1,21 @@
+.checkproductImage{
+    object-fit: contain;
+    width: 180px; height: 180px;
+}
+.checkoutproduct{
+    display: flex;
+    margin-top: 20px;margin-bottom:20px;
+    
+    padding-left:20px;
+}
+.checkproductInfo{
+    padding-left:20px;
+}
+.checkproductInfo > button{
+    background: rgb(226, 79, 79);
+    color: white;
+    margin-top: 10px;
+}
+.checkproductRating{
+    display: flex;
+}

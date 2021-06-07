@@ -1,11 +1,18 @@
 import React from "react";
 import logo_r from "../assets/logo_r.png";
 import "./Header.css";
-import { ShoppingBasket, Search } from "@material-ui/icons";
+import { ShoppingCart, Search } from "@material-ui/icons";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useStateValue } from "../stateprovider";
 function Header() {
+  //pulling fromthe data layer
+  const [{ cart }, dispatch] = useStateValue();
+
   return (
     <div className="header">
-      <img className="headerLogo" src={logo_r} />
+      <Link to="/">
+        <img className="headerLogo" src={logo_r} />
+      </Link>
 
       {/*search bar*/}
       <div className="headerSearch">
@@ -27,10 +34,12 @@ function Header() {
           <span className="hOLineone">Your</span>
           <span className="hOLinetwo">Prime</span>
         </div>
-        <div className="headerOptionbasket">
-          <ShoppingBasket className="headerShoppingbasket" />
-          <span className="headerBasketcount hOLineTwo">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="headerOptionbasket">
+            <ShoppingCart className="headerShoppingbasket" />
+            <span className="headerBasketcount hOLineTwo">{cart?.length} </span>
+          </div>
+        </Link>
       </div>
     </div>
   );

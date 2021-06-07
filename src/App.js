@@ -8,15 +8,14 @@ function App() {
   return (
     <Router>
       <div>
+        <Header />
         <Switch>
-          {/*Home and firstpage route*/}
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
-
-          <Route path="/checkout/">
+          <Route path="/checkout">
             <Checkout />
+          </Route>
+          {/*Home and firstpage route. Default route is always at the buttom*/}
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </div>
