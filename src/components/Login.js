@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logo_r from '../assets/logo_r.png'
+import { auth } from '../firebase';
 import './Login.css'
 
 function Login() {
@@ -8,15 +9,32 @@ function Login() {
     const [e_mail, setEmail]= useState('');
     const [password, setPassword]= useState('');
 
-    const signin=(e)=>{
+    const signin=e=>{
         //to avoid refreshing
         e.preventDefault()
         //then firebaseeeeeee
+        auth.signInWithEmailAndPassword(e_mail,password)
+        .then((auth)=>{
+            history.push('/')
+        })
+        .catch(error=>alert(error.message))
+        
     }
     const signup=(e)=>{
         //to avoid refreshing
         e.preventDefault()
+        
+        auth.createUserWithEmailAndPassword(e_mail,password)
+        .then((auth) =>{
+            //sucessful?
+            history.push('/')
+            console.log(auth)
+            alert("Account Created");
+
+        })
+        .catch(error =>alert(error.message))
     }
+    const history= useHistory()
 
     return (
         <div className="login">

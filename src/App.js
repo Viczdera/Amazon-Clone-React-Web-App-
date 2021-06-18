@@ -2,9 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Checkout from "./components/Checkout";
 import Login from "./components/Login";
-
+import Checkout from "./components/Checkout";
 function App() {
   return (
     <Router>
@@ -15,7 +14,7 @@ function App() {
           </Route>
           <Route path="/checkout">
             <Header />
-            <Checkout />
+            <Checkout/>
           </Route>
           {/*Home and firstpage route. Default route is always at the buttom*/}
           <Route path="/">
