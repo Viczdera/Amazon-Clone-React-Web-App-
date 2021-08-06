@@ -8,6 +8,7 @@ function Login() {
     //state
     const [e_mail, setEmail]= useState('');
     const [password, setPassword]= useState('');
+    
 
     const signin=e=>{
         //to avoid refreshing
@@ -17,13 +18,12 @@ function Login() {
         .then((auth)=>{
             history.push('/')
         })
-        .catch(error=>alert(error.message))
+        .catch(error=>alert(error.message)) 
         
     }
-    const signup=(e)=>{
+    const signup=e=>{
         //to avoid refreshing
         e.preventDefault()
-        
         auth.createUserWithEmailAndPassword(e_mail,password)
         .then((auth) =>{
             //sucessful?
